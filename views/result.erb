@@ -1,1 +1,21 @@
-<h1>This is the result!</h1>
+<% # Advertiser oder Publisher %>
+<% if params[:relationship] == "advertiser" %>
+  <% relationship = "Advertiser" %>
+  <% else %>
+  <% relationship = "Publisher" %>
+<% end %>
+
+<% # Berechung des absoluten Fehlers %>
+<% partner_count = params[:partner_count].to_i %>
+<% tideri_count = params[:tideri_count].to_i %>
+<% abs_fehler = tideri_count - partner_count %>
+
+<% # Berechnung des relativen Fehlers %>
+<% rel_fehler = abs_fehler.to_f / tideri_count * 100 %>
+
+<% # View %>
+<%= "Der Partner #{params[:partner_name]} ist #{relationship}." %>
+<%= "#{params[:partner_name]} hat #{partner_count} Klicks gemessen." %>
+<%= "Tideri hat #{tideri_count} Klicks gemessen" %>
+<%= "Die absolute Abweichung beträgt #{abs_fehler} Klicks." %>
+<%= "Die relative Abweichung liegt bei #{rel_fehler.to_i} %." %>
