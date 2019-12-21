@@ -8,5 +8,9 @@ configure :development do
 end
 
 get '/' do
-  'Test!'
+  erb :index
+end
+
+get '/result' do
+  erb :result
 end
