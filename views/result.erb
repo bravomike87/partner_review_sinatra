@@ -14,8 +14,18 @@
 <% rel_fehler = abs_fehler.to_f / tideri_count * 100 %>
 
 <% # View %>
+<br>
+<br>
 <%= "Der Partner #{params[:partner_name]} ist #{relationship}." %>
+<br>
+<br>
 <%= "#{params[:partner_name]} hat #{partner_count} Klicks gemessen." %>
+<br>
+<br>
 <%= "Tideri hat #{tideri_count} Klicks gemessen" %>
+<br>
+<br>
 <%= "Die absolute Abweichung beträgt #{abs_fehler} Klicks." %>
+<br>
+<br>
 <%= "Die relative Abweichung liegt bei #{rel_fehler.to_i} %." %>
